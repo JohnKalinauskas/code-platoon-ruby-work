@@ -1,0 +1,27 @@
+def caesar_cipher(string, shift_amount)
+  output = ''
+
+  string.split('').each do |character|
+    if character.match(/[A-Za-z]/) == nil
+      output += character
+    elsif character == character.upcase
+      output += convert_letter(character.downcase, shift_amount).upcase
+    else
+      output += convert_letter(character, shift_amount)
+    end
+  end
+
+  output
+end
+
+def convert_letter(letter, shift_amount)
+  letters_and_values = ('a'..'z').to_a.zip((1..26).to_a).to_h
+  current_value = letters_and_values[letter]
+  if current_value + shift_amount > 26
+    letters_and_values.key(current_value + shift_amount - 26)
+  elsif current_value + shift_amount <= 0
+    letters_and_values.key(current_value + shift_amount + 26)
+  else
+    letters_and_values.key(current_value + shift_amount)
+  end
+end
