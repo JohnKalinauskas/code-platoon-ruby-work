@@ -1,0 +1,29 @@
+
+def deaf_grandma
+ puts "HEY KID!"
+ byes=0
+ begin
+   reply = gets.chomp
+   if reply == 'GOODBYE!'
+     byes += 1
+     case byes
+       when 1; puts "LEAVING SO SOON?"
+         else ; puts "LATER, SKATER!"
+   end
+   else
+     byes = 0
+      if reply == ""
+        puts "WHAT?"
+      end
+      if reply != reply.upcase
+        puts "SPEAK UP, KID!"
+      end
+      if reply == reply.upcase and reply != "GOODBYE!" and reply != ""
+         puts "NO, NOT SINCE 1946!"
+      end
+  end
+  end until byes >= 2
+
+end
+
+deaf_grandma
