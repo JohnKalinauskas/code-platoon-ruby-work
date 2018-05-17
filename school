@@ -1,0 +1,11 @@
+
+# Phase_one
+
+class school
+  attr_reader :school_name, :mascot:, :address
+   def initialize(school_name, mascot, address)
+     @school_name = school_name
+     @mascot = mascot
+     @address = address
+  end
+end
